@@ -1,15 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: PT sans Narrow, arial, sans-serif;
+    font-family: "PT sans Narrow", arial, sans-serif;
     font-size: 14px;
-    line-height: 24;
+    line-height: 24px;
     font-weight: 700;
     color: #ffffff;
     text-transform: uppercase;
-    background-image:url("image/background-barber.jpg");
     background-color: #000000;
-    background-position: top center;
+    background-image: url("image/bgbarber.jpg");
+    background-position:top center;
     background-repeat: no-repeat;   
 }
 a {
@@ -21,9 +21,86 @@ line-height: 20px;
 color: #ffffff;
 background-color: #000000;
 }
+.site-navigation, 
 .feature-list {
     list-style: none;
 }
+.site-navigation a {
+    color: #ffffff;
+}
+.site-navigation a:hover, 
+.site-navigation a :focus {
+    background-color: #242424;
+}
+
 .feature-item {
     text-align: center;
+}
+.feature-item h2 {
+    font-size: 30px;
+    line-height: 42px;
+}
+.index-columns {
+    color: black;
+   background-color: #f8f5f2;
+    background-image: url(image/pattern-light.png);
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+.index-columns h1 {
+font-size: 30px;
+line-height: 42px;
+}
+.news-item {
+    list-style: none;
+}
+date {
+    text-transform: none;
+}
+.button {
+    font: inherit;
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-color: #000000;
+    border: none;
+}
+.button:hover,.button:active, .button:focus {
+    background-color: #663d15;
+}
+.appointment-item input {
+    font: inherit;
+    background-color: transparent;
+    border: 2px solid #000000;
+}
+.appointment-item input:focus {
+    border-color: blue;
+}
+.main-footer {
+    color: #ffffff;
+    background-color: #212121;
+     background-image: url("image/pattern-footer.jpg");
+     background-position: 0 0;
+     background-repeat: repeat;
+}
+footer a {
+    color:white;
+    text-decoration: underline;
+}
+footer a:focus,
+footer a:hover {
+    text-decoration: none;
+}
+.footer-social {
+    text-align: center;
+    list-style: none;
+}
+.footer-copyright {
+    text-align: center;
+}
+.footer-copyright a:hover, 
+.footer-copyright a:focus {
+    color: #000000;
+    background-color: #ffffff;
 }

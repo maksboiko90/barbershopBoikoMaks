@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>barbershop</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link href="css/normalizze/normalize.css" rel="stylesheet">
+    <link href="css/main-index.css" rel="stylesheet">
 </head>
 
 <body>
     <!--Шапка -->
-    <header>
-        <ul>
+    <header class="main-navigation">
+        <ul class="site-navigation">
             <li><a href="#">Информация</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="price.html">Прайс-лист</a></li>
@@ -24,9 +27,8 @@
         <section>
             <!--Логотип-->
             <a href="index.html"><img src="image/index-logo.png" alt="Barbershop borodinski"></a>
-            <ul>
-
-                <li>
+            <ul class="feature-list">
+                <li class="feature-item">
                     <h2>Быстро</h2>
                     <p>Мы делаем свою работу быстро! Два часа пролетят
                         незаметно
@@ -34,14 +36,14 @@
                 </li>
 
 
-                <li>
+                <li class="feature-item">
                     <h2>Круто</h2>
                     <p>Забудьте как вы стриглись раньше.
                         Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.</p>
                 </li>
 
 
-                <li>
+                <li class="feature-item">
                     <h2>Дорого</h2>
                     <p>Наши мастера - профессионалы своего дела
                         и не могут стоить дешево. К тому же, разве цена не дает определенный статус?</p>
@@ -51,77 +53,79 @@
         </section>
 
         <!--Новости-->
-        <section>
-            <div>
+        <div class="index-columns">
+            <section class="news">
                 <h1>Новости</h1>
-                <ul>
-                    <li>
+                <ul class="news-list">
+                    <li class="news-item">
                         <p>Нам наконец завезли ягермайстер! Теперь вы можете<br>пропустить стаканчик во время стрижки
                         </p>
                         <date>11 января</date>
                     </li>
-                    <li>
+                    <li class="news-item">
                         <p>В нашей команде пополнение, Борис "Бритва" Стригунец,<br>
                             обладатель множества титулов и наград пополнил наши<br> стройные ряды</p>
                         <date>18 января</date>
                     </li>
                 </ul>
-                <a href=""> Все новости</a>
-            </div>
+                <a class="button" href="#"> Все новости</a>
+            </section>
 
             <!--Фотогалерея-->
-            <div>
+            <section class="gallery">
                 <h1>Фотогалерея</h1> <br>
                 <a href=""><img src="image/Layer 21.jpg"></a>
-                <button type="button">Назад</button>
-                <button type="button">Вперед</button>
-            </div>
-        </section>
+                <button class="button" type="button">Назад</button>
+                <button class="button" type="button">Вперед</button>
+            </section>
+        </div>
 
         <!--Контктная информация-->
-        <section>
-            <h1>Контактная информация</h1>
-            <p>Барбершоп Бородинский<br>
-            <address>адрес: г. Санкт-Петербург, Б. Конюшенная д.19/8</address><br> телефон:+375292001010</p>
-            <time>Время работы:<br> Пн-Пт: с 10:00 до 22:00<br> Сб-Вс: с 10:00 до 19:00</time>
+        <div class="index-columns">
+            <section class="contacts">
+                <h1>Контактная информация</h1>
+                <p>Барбершоп Бородинский<br>
+                <address>адрес: г. Санкт-Петербург, Б. Конюшенная д.19/8</address><br> телефон:+375292001010</p>
+                <time>Время работы:<br> Пн-Пт: с 10:00 до 22:00<br> Сб-Вс: с 10:00 до 19:00</time>
 
-            <a href=""> Как проехать</a>
-            <a href=""> Обратная связь</a>
-
+                <a class="button" href="#"> Как проехать</a>
+                <a class="button" href="#"> Обратная связь</a>
+            </section>
             <!--Форма заполнения -->
-            <h1>Записаться</h1>
-            <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
-            <form action="">
-                <label>Дата</label>
-                <input type="date" value="08.06.2022">
-                <label>Время</label>
-                <input type="time" value="10:00">
-                <label>Ваше имя</label>
-                <input type="text" value="Борода">
-                <label>Телефон</label>
-                <input type="text" value="+375292001010">
-                <input type="submit" value="Отправить">
-            </form>
-        </section>
-
+            <section class="appointment">
+                <h1>Записаться</h1>
+                <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
+                <form class="appointment-item">
+                    <label>Дата</label>
+                    <input type="date" value="08.06.2022">
+                    <label>Время</label>
+                    <input type="time" value="10:00">
+                    <label>Ваше имя</label>
+                    <input type="text" value="Борода">
+                    <label>Телефон</label>
+                    <input type="text" value="+375292001010">
+                    <button class="button" type="submit">Отправить</button>
+                </form>
+            </section>
+        </div>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <p>
             Барбершоп бородинский<br>
 
         <address>адрес: г. Санкт-Петербург, Б. Конюшенная д.19/8</address><br>
 
-        <a href="">Как нас найти?</a><br>
+        <a href="#">Как нас найти?</a><br>
         телефон:+375292001010
         </p>
-        <ul>Давайте дружить
-            <li><a href=""><img src="image/icon VK.png" alt="VK"></a></li>
-            <li><a href=""><img src="image/icon Facebook.png" alt="FaceBook"></a></li>
-            <li><a href=""><img src="image/icon Insta.png" alt="Insta"></a></li>
+        <ul class="footer-social">Давайте дружить
+            <li><a href="#"><img src="image/icon VK.png" alt="VK"></a></li>
+            <li><a href="#"><img src="image/icon Facebook.png" alt="FaceBook"></a></li>
+            <li><a href="#"><img src="image/icon-instagram.png" alt="Insta"></a></li>
         </ul>
 
-        <div><span>Разработано</span> <a href="">HTML Academy</a></div>
+        <div class="footer-copyright"><span>Разработано</span> <a href="#">HTML Academy</a></div>
 
     </footer>
 </body>
