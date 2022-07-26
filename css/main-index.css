@@ -8,12 +8,31 @@ body {
     color: #ffffff;
     text-transform: uppercase;
     background-color: #000000;
-    background-image: url("image/bgbarber.jpg");
+    background-image: url(/image/bgbarber.jpg);
     background-position:top center;
     background-repeat: no-repeat;   
 }
+html, body {
+    min-width: 1122px;
+    min-height: 1750px;
+}
 a {
     text-decoration: none;
+}
+.visually-hidden :not(:focus):not(:active),
+input [type="checkbox"] .visually-hidden,
+input [type="radio"], .visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 .main-navigation {
 font-size: 16px;
@@ -21,15 +40,55 @@ line-height: 20px;
 color: #ffffff;
 background-color: #000000;
 }
-.site-navigation, 
+.site-navigation,
+.user-navigation, 
 .feature-list {
     list-style: none;
 }
-.site-navigation a {
+.site-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    width: 100%;
+}
+.user-navigation {
+    display: flex;
+    margin-top: 0;
+}
+.user-navigation .login-link {
+    position: relative;
+    padding-left: 50px;
+    
+}
+.login-link::before {
+content: "";
+position: absolute;
+top: 27px;
+left: 24px;
+width: 16px;
+height: 18px;
+
+background-image: url(/image/login.png);
+background-repeat: no-repeat;
+background-position: 0 0;
+opacity: 0.5;
+}
+.login-link:hover::before,
+.login-link:focus::before,
+.login-link:active::before {
+    opacity: 1;
+}
+.site-navigation a,
+.user-navigation a {
+    display: block;
+    padding: 25px 20px;
     color: #ffffff;
+    vertical-align: middle;
 }
 .site-navigation a:hover, 
-.site-navigation a :focus {
+.site-navigation a :focus,
+.user-navigation a:hover, 
+.user-navigation a :focus  {
     background-color: #242424;
 }
 
@@ -37,22 +96,53 @@ background-color: #000000;
     text-align: center;
 }
 .feature-item h2 {
+    position: relative;
+    margin: 0;
+    margin-bottom: 60px;
     font-size: 30px;
     line-height: 42px;
+}
+.feature-item h2::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    background-color: #ffffff;
+    transform: rotate(45deg);   
+}
+.feature-item p {
+    margin: 0 10px;
 }
 .index-columns {
     color: black;
    background-color: #f8f5f2;
-    background-image: url(image/pattern-light.png);
-    background-position: 0 0;
-    background-repeat: repeat;
+   background-image: url(/image/line-gray.png),
+     url(/image/pattern-light-white.png);
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
 }
 .index-columns h1 {
+    margin: 0;
+    margin-bottom: 25px;
+
 font-size: 30px;
 line-height: 42px;
 }
+.news-list {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+}
 .news-item {
     list-style: none;
+    margin-bottom: 25px;
+}
+.news-item p {
+    margin: 0;
 }
 date {
     text-transform: none;
@@ -65,22 +155,82 @@ date {
     text-transform: uppercase;
     background-color: #000000;
     border: none;
+    
+    display: inline-block;
+    padding: 10px 30px;
+    margin-right: 16px;
+
 }
 .button:hover,.button:active, .button:focus {
     background-color: #663d15;
 }
-.appointment-item input {
+.gallery-content {
+height: 164px;
+margin: 0;
+margin-bottom: 50px;
+}
+.gallery-content img {
+    height: 164px;
+    width: 286px;
+    
+}
+.gallery-container {
+    position: relative;
+    height: 260px;
+}
+.gallery-button {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 140px;
+}
+.gallery-button-back {
+    left: 0;
+}
+.gallery-button-next {
+    right: 0;
+    margin-right: 0;
+}
+.contacts p {
+    margin: 0;
+    margin-bottom: 30px;
+}
+.appointment-item {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 140px;
+}
+.appointment-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.appointment-form input {
     font: inherit;
     background-color: transparent;
     border: 2px solid #000000;
 }
-.appointment-item input:focus {
+.appointment-form input:focus {
     border-color: blue;
+}
+.appointment-form label {
+    display: block;
+    margin-bottom: 9px;
+    margin-left: 15px;
+}
+.appointment-item input {
+    box-sizing: border-box;
+    width: 140px;
+    padding: 8px 15px;
+}
+.appointment-form .button {
+    display: block;
+    width: 300px;
 }
 .main-footer {
     color: #ffffff;
     background-color: #212121;
-     background-image: url("image/pattern-footer.jpg");
+     background-image: url(/image/pattern-footer.jpg);
      background-position: 0 0;
      background-repeat: repeat;
 }
@@ -92,9 +242,53 @@ footer a:focus,
 footer a:hover {
     text-decoration: none;
 }
+.footer-contacts {
+    text-align: center;
+}
 .footer-social {
     text-align: center;
     list-style: none;
+}
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 10px;
+    background-color: black;
+}
+.footer-social ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 141px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.social-button:hover,
+.social-button:focus {
+    background-color: #ffffff;
+}
+.social-button:hover path,
+.social-button:focus path {
+    fill: #000000;
+} 
+.footer-social b {
+    display: block;
+    margin-bottom: 15px;
+}
+.footer-copyright .button {
+    display: block;
+    margin-right: 0;
+}
+.footer-copyright a {
+    text-decoration: none;
+}
+.footer-copyright b {
+    display: block;
+    margin-bottom: 15px;
 }
 .footer-copyright {
     text-align: center;
@@ -103,4 +297,94 @@ footer a:hover {
 .footer-copyright a:focus {
     color: #000000;
     background-color: #ffffff;
+}
+
+/* css setki */
+.main-navigation {
+height: 72px;
+margin-bottom: 61px;
+}
+.logotip {
+    margin-top: 61px;
+    margin-bottom: 70px;
+    text-align: center;
+    
+}
+.container {
+    display: flex;
+}
+.feature-list {
+    display: flex;
+    justify-content: space-between;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   min-height: 170px;
+   width: 100%;
+}
+.feature-item {
+    width: 300px;
+    min-height: 170px;
+}
+.index-columns {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f5f2;
+    margin-top: 80px;
+    padding: 50px 80px;
+    margin-bottom: 35px;
+    width: 100%;
+}
+.news {
+    width: 380px;
+    min-height: 315px;
+}
+.gallery {
+    width: 300px;
+    min-height: 315px;
+}
+.contacts {
+    width: 380px;
+    min-height: 295px;  
+}
+.appointment {
+    width: 300px;
+    min-height: 340px;
+}
+.container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.main-footer {
+    margin-top: 65px;
+    min-height: 180px;
+    padding: 60px 0;
+}
+.main-footer .container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.footer-contacts {
+    width: 320px;
+    margin: 0;
+    margin-right: 80px;
+    
+}
+.footer-social {
+width: 145px;
+min-height: 100px;
+margin-right: 235px;
+}
+.footer-copyright {
+width: 150px;
+margin: 0;
+margin-left: auto;
+min-height: 100px;
+}
+/*декоративные элементы*/
+img {
+    max-width: 100%;
+    height: auto;
 }
